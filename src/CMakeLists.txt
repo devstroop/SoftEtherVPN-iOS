@@ -1,4 +1,7 @@
-if(UNIX)
+if(COCOA)
+  macro(install_wrapper_script component target)
+  endmacro(install_wrapper_script)
+elseif(UNIX)
   # Creates wrapper scripts and installs them in the user's binaries directory, which is usually "/usr/local/bin".
   # This is required because symlinks use the folder they are in as working directory.
   macro(install_wrapper_script component target)
@@ -69,15 +72,31 @@ if(UNIX)
   endif()
 
   if(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
-    add_definitions(-DUNIX_BSD -DUNIX_MACOS -DBRIDGE_PCAP)
+    add_definitions(-DUNIX_BSD -DUNIX_MACOS)
+
+    if(COCOA)
+      set(OBJ_BRIDGE_NAME "$(PRODUCT_NAME)-Bridging-Header.h")
+      include_directories("${MACOS_SDK_PATH}/usr/include/net" "${MACOS_SDK_PATH}/usr/include/readline") 
+      add_definitions(-DCOCOA)
+    else()
+      add_definitions(-DBRIDGE_PCAP)
+    endif()
+
   endif()
+
 endif()
+
+# Mayaqua kernel
+add_subdirectory(Mayaqua)
 
 # Cedar communication module
 add_subdirectory(Cedar)
 
-# Mayaqua kernel
-add_subdirectory(Mayaqua)
+# Stop here for Xcode
+if(COCOA)
+  message("not including appliction for Cocoa")
+  return()
+endif()
 
 # hamcorebuilder utility
 add_subdirectory(hamcorebuilder)

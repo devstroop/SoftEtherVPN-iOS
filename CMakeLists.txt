@@ -8,13 +8,9 @@ project("SoftEther VPN"
 set(TOP_DIRECTORY ${CMAKE_SOURCE_DIR})
 set(BUILD_DIRECTORY ${TOP_DIRECTORY}/build)
 
-# We define a dedicated variable because CMAKE_BUILD_TYPE can have different
-# configurations than "Debug" and "Release", such as "RelWithDebInfo".
-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-  set(BUILD_TYPE "Debug")
-else()
-  set(BUILD_TYPE "Release")
-endif()
+list(APPEND CMAKE_MODULE_PATH "${TOP_DIRECTORY}/cmake")
+
+include(SetBuildType)
 
 # Check that submodules are present only if source was downloaded with git
 if(EXISTS "${TOP_DIRECTORY}/.git" AND NOT EXISTS "${TOP_DIRECTORY}/src/Mayaqua/3rdparty/cpu_features/CMakeLists.txt")
@@ -22,16 +18,9 @@ if(EXISTS "${TOP_DIRECTORY}/.git" AND NOT EXISTS "${TOP_DIRECTORY}/src/Mayaqua/3
 endif()
 
 # Compare ${PROJECT_VERSION} and src/CurrentBuild.txt
-file(READ ${TOP_DIRECTORY}/src/CurrentBuild.txt CurrentBuild)
+include(ReadCurrentBuild)
 
-string(REGEX MATCH "VERSION_MAJOR ([0-9]+)" temp ${CurrentBuild})
-string(REGEX REPLACE "VERSION_MAJOR ([0-9]+)" "\\1" CurrentBuild_MAJOR ${temp})
-string(REGEX MATCH "VERSION_MINOR ([0-9]+)" temp ${CurrentBuild})
-string(REGEX REPLACE "VERSION_MINOR ([0-9]+)" "\\1" CurrentBuild_MINOR ${temp})
-string(REGEX MATCH "VERSION_BUILD ([0-9]+)" temp ${CurrentBuild})
-string(REGEX REPLACE "VERSION_BUILD ([0-9]+)" "\\1" CurrentBuild_BUILD ${temp})
-
-if(NOT ${PROJECT_VERSION} VERSION_EQUAL "${CurrentBuild_MAJOR}.${CurrentBuild_MINOR}.${CurrentBuild_BUILD}")
+if(NOT ${PROJECT_VERSION} VERSION_EQUAL ${CurrentBuild_VERSION})
   message (FATAL_ERROR "PROJECT_VERSION does not match to src/CurrentBuild.txt")
 endif()
 
@@ -45,16 +34,7 @@ endif()
 
 configure_file("${TOP_DIRECTORY}/AUTHORS.TXT" "${TOP_DIRECTORY}/src/bin/hamcore/authors.txt" COPYONLY)
 
-# Date and time
-string(TIMESTAMP DATE_DAY "%d" UTC)
-string(TIMESTAMP DATE_MONTH "%m" UTC)
-string(TIMESTAMP DATE_YEAR "%Y" UTC)
-string(TIMESTAMP TIME_HOUR "%H" UTC)
-string(TIMESTAMP TIME_MINUTE "%M" UTC)
-string(TIMESTAMP TIME_SECOND "%S" UTC)
-
-message(STATUS "Build date: ${DATE_DAY}/${DATE_MONTH}/${DATE_YEAR}")
-message(STATUS "Build time: ${TIME_HOUR}:${TIME_MINUTE}:${TIME_SECOND}")
+include(TimeStamps)
 
 set(CPACK_PACKAGING_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX})
 

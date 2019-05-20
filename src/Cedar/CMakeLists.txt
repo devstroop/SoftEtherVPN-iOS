@@ -6,10 +6,15 @@ if(WIN32)
   file(GLOB SOURCES_CEDAR_CPP "*.cpp")
 endif()
 
+if(COCOA)
+  enable_language(Swift)
+  file(GLOB SOURCES_CEDAR_SWIFT "*.swift")
+endif()
+
 if(WIN32)
   add_library(cedar STATIC ${SOURCES_CEDAR} ${SOURCES_CEDAR_CPP} ${HEADERS_CEDAR})
 else()
-  add_library(cedar SHARED ${SOURCES_CEDAR} ${SOURCES_CEDAR_CPP} ${HEADERS_CEDAR})
+  add_library(cedar SHARED ${SOURCES_CEDAR} ${SOURCES_CEDAR_SWIFT} ${HEADERS_CEDAR})
 endif()
 
 set_target_properties(cedar
@@ -29,7 +34,18 @@ if(WIN32)
   target_include_directories(cedar PRIVATE winpcap)
 endif()
 
-if(UNIX)
+if(COCOA)
+  set_target_properties(cedar PROPERTIES
+    FRAMEWORK TRUE
+    MACOSX_FRAMEWORK_IDENTIFIER "$ENV{APP_ID}.cedar"
+    PUBLIC_HEADER "${HEADERS_CEDAR}"
+    OUTPUT_NAME "Cedar"
+    XCODE_ATTRIBUTE_SWIFT_OBJC_BRIDGING_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/${OBJ_BRIDGE_NAME}"
+  )
+
+  target_link_libraries(cedar PRIVATE "-framework Mayaqua" readline)
+
+elseif(UNIX)
   find_library(LIB_READLINE readline)
   find_package(Curses REQUIRED)
 
@@ -65,7 +81,7 @@ string(REGEX REPLACE "^0([^ ]*)" "\\1" BUILD_SECOND "${TIME_SECOND}")
 add_definitions(-DBUILD_DATE_D=${BUILD_DAY} -DBUILD_DATE_M=${BUILD_MONTH} -DBUILD_DATE_Y=${BUILD_YEAR})
 add_definitions(-DBUILD_DATE_HO=${BUILD_HOUR} -DBUILD_DATE_MI=${BUILD_MINUTE} -DBUILD_DATE_SE=${BUILD_SECOND})
 
-if(UNIX)
+if(UNIX AND NOT COCOA)
   install(TARGETS cedar
     COMPONENT "common"
     DESTINATION "${CMAKE_INSTALL_LIBDIR}"

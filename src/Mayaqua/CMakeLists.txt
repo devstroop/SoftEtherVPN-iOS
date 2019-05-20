@@ -1,10 +1,15 @@
 file(GLOB SOURCES_MAYAQUA "*.c")
 file(GLOB HEADERS_MAYAQUA "*.h")
 
+if(COCOA)
+  enable_language(Swift)
+  file(GLOB SOURCES_MAYAQUA_SWIFT "*.swift")
+endif()
+
 if(WIN32)
   add_library(mayaqua STATIC ${SOURCES_MAYAQUA} ${HEADERS_MAYAQUA})
 else()
-  add_library(mayaqua SHARED ${SOURCES_MAYAQUA} ${HEADERS_MAYAQUA})
+  add_library(mayaqua SHARED ${SOURCES_MAYAQUA} ${SOURCES_MAYAQUA_SWIFT} ${HEADERS_MAYAQUA})
 endif()
 
 target_include_directories(mayaqua PUBLIC .)
@@ -53,16 +58,28 @@ if(WIN32)
   target_link_libraries(mayaqua PRIVATE zlibstatic ${LIB_SSL} ${LIB_CRYPTO})
 endif()
 
-if(UNIX)
+if(COCOA)
+  set_target_properties(mayaqua PROPERTIES
+    FRAMEWORK TRUE
+    MACOSX_FRAMEWORK_IDENTIFIER "$ENV{APP_ID}.mayaqua"
+    PUBLIC_HEADER "${HEADERS_MAYAQUA}"
+    OUTPUT_NAME "Mayaqua"
+    XCODE_ATTRIBUTE_SWIFT_OBJC_BRIDGING_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/${OBJ_BRIDGE_NAME}"
+    XCODE_ATTRIBUTE_FRAMEWORK_SEARCH_PATHS "$ENV{FRAMEWORKS_ARCH_PATHS}/$(PLATFORM_NAME)"
+  )
+
+  target_link_libraries(mayaqua PRIVATE "-lz -liconv -lreadline -framework openssl")
+
+  add_definitions(-DSKIP_CPU_FEATURES)
+elseif(UNIX)
   find_package(OpenSSL REQUIRED)
   find_package(Threads REQUIRED)
   find_package(ZLIB REQUIRED)
 
   # In some cases libiconv is not included in libc
-  find_library(LIB_ICONV iconv)
+  find_library(LIB_ICONV iconv HINTS /opt/local/lib)
 
   find_library(LIB_RT rt)
-
   target_link_libraries(mayaqua PRIVATE OpenSSL::SSL OpenSSL::Crypto Threads::Threads ZLIB::ZLIB)
 
   if(HAVE_SYS_AUXV)
