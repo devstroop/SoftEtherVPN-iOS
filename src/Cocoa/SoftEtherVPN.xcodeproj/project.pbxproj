@@ -312,15 +312,17 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/CMake.xcconfig.template",
 			);
 			name = " Generate libsoftether.xcodeproj";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(SRCROOT)/CMake.xcconfig",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Script to generate project for Cedar and Mayaqua\nBUILD_DIR=\"${SRCROOT}/libsoftether\"\nCMAKE_BIN=\"/opt/local/bin/cmake\"\n\n# Use COLOR_DIAGNOSTICS to test if the script is run from Xcode UI or xcodebuild command\n# COLOR_DIAGNOSTICS = \"NO\" in Xcode UI\n\nCONF_CHANGED=$([ ${CMAKE_BUILD_TYPE} != ${CONFIGURATION} ] && echo 1)\n\nif [ ! -d ${BUILD_DIR} ] || [ ${COLOR_DIAGNOSTICS} == \"YES\" ] || [ $CONF_CHANGED ]; then\n    mkdir -p ${BUILD_DIR}\n    cd ${BUILD_DIR}\n${CMAKE_BIN} -GXcode ${SRCROOT} || ( rm -r ${BUILD_DIR}; exit 1 )\n    if [ ${COLOR_DIAGNOSTICS} == \"NO\" ]; then\n        # force Xcode to stop the build for the new targets to load\n    if [ $CONF_CHANGED ]; then\n        WARN=\"Build Configuration Changed, \"\n    fi\n    echo \"error: ${WARN}libsoftether.xcodeproj Generated. Please restart the build to continue.\" \n        exit 1\n    fi\nfi\n";
+			shellScript = "# Script to generate project for Cedar and Mayaqua\nBUILD_DIR=\"${SRCROOT}/libsoftether\"\nCMAKE_BIN=\"/opt/local/bin/cmake\"\n\n# Use COLOR_DIAGNOSTICS to test if the script is run from Xcode UI or xcodebuild command\n# COLOR_DIAGNOSTICS = \"NO\" in Xcode UI\n\nCONF_CHANGED=$([ ${CMAKE_BUILD_TYPE} != ${CONFIGURATION} ] && echo 1)\n\nif [ ${CMAKE_GENERATED} != 1 ] || [ ! -d ${BUILD_DIR} ]|| [ ${COLOR_DIAGNOSTICS} == \"YES\" ] || [ $CONF_CHANGED ]; then\n    mkdir -p ${BUILD_DIR}\n    cd ${BUILD_DIR}\n${CMAKE_BIN} -GXcode ${SRCROOT} || ( rm -r ${BUILD_DIR}; exit 1 )\n    if [ ${COLOR_DIAGNOSTICS} == \"NO\" ]; then\n        # force Xcode to stop the build for the new targets to load\n    if [ $CONF_CHANGED ]; then\n        WARN=\"Build Configuration Changed, \"\n    fi\n    echo \"error: ${WARN}libsoftether.xcodeproj Generated. Please restart the build to continue.\" \n        exit 1\n    fi\nfi\n";
 		};
 		2E7CA6EA22890370000D82D1 /*  Generate strings from strtable */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -604,11 +606,7 @@
 					"$(inherited)",
 					"$(DEFINES_libsoftether)",
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/..",
-					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/net,
-					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/readline,
-				);
+				HEADER_SEARCH_PATHS = "$(INCLUDES_libsoftether)";
 				INFOPLIST_FILE = SENE/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/../Frameworks",
@@ -616,7 +614,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(ROOT_APP_ID).$(PLATFORM_DISPLAY_NAME).network-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -630,11 +627,7 @@
 					"$(inherited)",
 					"$(DEFINES_libsoftether)",
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/..",
-					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/net,
-					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/readline,
-				);
+				HEADER_SEARCH_PATHS = "$(INCLUDES_libsoftether)";
 				INFOPLIST_FILE = SENE/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/../Frameworks",

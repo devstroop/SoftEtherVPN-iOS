@@ -49,6 +49,10 @@ set(CMAKE_XCODE_ATTRIBUTE_USE_HEADERMAP YES)
 add_subdirectory(.. src)
 
 # Export CMake Configurations to Xcode
-get_directory_property(defs DIRECTORY ../Cedar COMPILE_DEFINITIONS )
+get_directory_property(defs DIRECTORY ../Cedar COMPILE_DEFINITIONS)
 string(REPLACE ";" " " defs_spaces "${defs}")
+
+get_directory_property(includes DIRECTORY ../Cedar INCLUDE_DIRECTORIES)
+string(REPLACE ";" " " includes_spaces "${includes}")
+
 configure_file(${DEF_TEMPLATE} ${DEF_CONF})
