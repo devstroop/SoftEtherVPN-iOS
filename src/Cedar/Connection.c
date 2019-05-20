@@ -2727,7 +2727,11 @@ BLOCK *NewBlock(void *data, UINT size, int compress)
 }
 
 // Create a TCP socket
+#ifdef COCOA
+TCPSOCK *InternalNewTcpSock(SOCK *s)
+#else
 TCPSOCK *NewTcpSock(SOCK *s)
+#endif // COCOA
 {
 	TCPSOCK *ts;
 	// Validate arguments

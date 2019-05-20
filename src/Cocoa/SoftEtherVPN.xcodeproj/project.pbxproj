@@ -1,0 +1,690 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		2E7CA6B12287EC97000D82D1 /* libsoftether */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2E7CA6B22287EC98000D82D1 /* Build configuration list for PBXAggregateTarget "libsoftether" */;
+			buildPhases = (
+				2E10C27E2292F59800210CF9 /* Git workaround for ignore xcconfigs */,
+				2E7CA6B52287ECB8000D82D1 /*  Generate libsoftether.xcodeproj */,
+				2E7CA6EA22890370000D82D1 /*  Generate strings from strtable */,
+			);
+			dependencies = (
+			);
+			name = libsoftether;
+			productName = libsoftether;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		2E0D5F902292475B003B4E96 /* vpnserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D5F8F2292475B003B4E96 /* vpnserver.c */; };
+		2E45B36B229242A700F2866C /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7CA6C62288B90E000D82D1 /* Cedar.framework */; };
+		2E45B36C229242A700F2866C /* Mayaqua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7CA6C82288B90E000D82D1 /* Mayaqua.framework */; };
+		2E7CA6C72288B90E000D82D1 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7CA6C62288B90E000D82D1 /* Cedar.framework */; };
+		2E7CA6C92288B90E000D82D1 /* Mayaqua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7CA6C82288B90E000D82D1 /* Mayaqua.framework */; };
+		2E7CA6D32288C720000D82D1 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA6D22288C720000D82D1 /* PacketTunnelProvider.swift */; };
+		2EBCD24C2285043C00B2F060 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBCD24B2285043C00B2F060 /* NetworkExtension.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2E7CA6C02287FABC000D82D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EBCD1CD228127F900B2F060 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E7CA6B12287EC97000D82D1;
+			remoteInfo = libsoftether;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2EBCD1F22282864900B2F060 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2E0D5F8E2292475B003B4E96 /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = resource.h; path = ../vpnserver/resource.h; sourceTree = "<group>"; };
+		2E0D5F8F2292475B003B4E96 /* vpnserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vpnserver.c; path = ../vpnserver/vpnserver.c; sourceTree = "<group>"; };
+		2E0D5F91229248E7003B4E96 /* Developer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Developer.xcconfig; sourceTree = "<group>"; };
+		2E7CA6B62287ECE4000D82D1 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		2E7CA6BA2287EE9C000D82D1 /* Defaults.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Defaults.xcconfig; sourceTree = "<group>"; };
+		2E7CA6C62288B90E000D82D1 /* Cedar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cedar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E7CA6C82288B90E000D82D1 /* Mayaqua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Mayaqua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E7CA6D22288C720000D82D1 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		2E7CA6DE2288F878000D82D1 /* strtable.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = strtable.py; sourceTree = "<group>"; };
+		2E7CA6E12288FA7E000D82D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2E7CA6E32288FAAB000D82D1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2E7CA6E42288FAD9000D82D1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2E7CA6E52288FAFD000D82D1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2E7CA6E62288FB16000D82D1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2E7CA6E72288FB20000D82D1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2EBCD1F42282864900B2F060 /* vpnserver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vpnserver; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EBCD2402283BB7500B2F060 /* SENE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SENE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EBCD2442283BB7500B2F060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EBCD2452283BB7500B2F060 /* SENE-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SENE-iOS.entitlements"; sourceTree = "<group>"; };
+		2EBCD2492285013F00B2F060 /* SENE-macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SENE-macOS.entitlements"; sourceTree = "<group>"; };
+		2EBCD24B2285043C00B2F060 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		2EF689792292148A00E364D6 /* CMake.xcconfig.template */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = CMake.xcconfig.template; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2EBCD1F12282864900B2F060 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E45B36B229242A700F2866C /* Cedar.framework in Frameworks */,
+				2E45B36C229242A700F2866C /* Mayaqua.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EBCD23D2283BB7500B2F060 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E7CA6C72288B90E000D82D1 /* Cedar.framework in Frameworks */,
+				2E7CA6C92288B90E000D82D1 /* Mayaqua.framework in Frameworks */,
+				2EBCD24C2285043C00B2F060 /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E7CA6B82287ED68000D82D1 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				2E7CA6BA2287EE9C000D82D1 /* Defaults.xcconfig */,
+				2E0D5F91229248E7003B4E96 /* Developer.xcconfig */,
+				2EF689792292148A00E364D6 /* CMake.xcconfig.template */,
+			);
+			name = Configs;
+			sourceTree = "<group>";
+		};
+		2E7CA6DD2288F865000D82D1 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				2E7CA6B62287ECE4000D82D1 /* CMakeLists.txt */,
+				2E7CA6DE2288F878000D82D1 /* strtable.py */,
+			);
+			name = Scripts;
+			sourceTree = "<group>";
+		};
+		2E7CA6DF2288FA48000D82D1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2E7CA6E22288FA7E000D82D1 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2EBCD1CC228127F900B2F060 = {
+			isa = PBXGroup;
+			children = (
+				2E7CA6DF2288FA48000D82D1 /* Resources */,
+				2E7CA6DD2288F865000D82D1 /* Scripts */,
+				2EBCD1F52282864900B2F060 /* vpnserver */,
+				2EBCD2412283BB7500B2F060 /* SENE */,
+				2E7CA6B82287ED68000D82D1 /* Configs */,
+				2EBCD1D6228127F900B2F060 /* Products */,
+				2EBCD1FB2282866500B2F060 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2EBCD1D6228127F900B2F060 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2EBCD1F42282864900B2F060 /* vpnserver */,
+				2EBCD2402283BB7500B2F060 /* SENE.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2EBCD1F52282864900B2F060 /* vpnserver */ = {
+			isa = PBXGroup;
+			children = (
+				2E0D5F8E2292475B003B4E96 /* resource.h */,
+				2E0D5F8F2292475B003B4E96 /* vpnserver.c */,
+			);
+			name = vpnserver;
+			sourceTree = "<group>";
+		};
+		2EBCD1FB2282866500B2F060 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E7CA6C62288B90E000D82D1 /* Cedar.framework */,
+				2E7CA6C82288B90E000D82D1 /* Mayaqua.framework */,
+				2EBCD24B2285043C00B2F060 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2EBCD2412283BB7500B2F060 /* SENE */ = {
+			isa = PBXGroup;
+			children = (
+				2E7CA6D22288C720000D82D1 /* PacketTunnelProvider.swift */,
+				2EBCD2442283BB7500B2F060 /* Info.plist */,
+				2EBCD2492285013F00B2F060 /* SENE-macOS.entitlements */,
+				2EBCD2452283BB7500B2F060 /* SENE-iOS.entitlements */,
+			);
+			path = SENE;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2EBCD1F32282864900B2F060 /* vpnserver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EBCD1FA2282864900B2F060 /* Build configuration list for PBXNativeTarget "vpnserver" */;
+			buildPhases = (
+				2EBCD1F02282864900B2F060 /* Sources */,
+				2EBCD1F12282864900B2F060 /* Frameworks */,
+				2EBCD1F22282864900B2F060 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vpnserver;
+			productName = vpnserver;
+			productReference = 2EBCD1F42282864900B2F060 /* vpnserver */;
+			productType = "com.apple.product-type.tool";
+		};
+		2EBCD23F2283BB7500B2F060 /* SENE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EBCD2462283BB7500B2F060 /* Build configuration list for PBXNativeTarget "SENE" */;
+			buildPhases = (
+				2EBCD23C2283BB7500B2F060 /* Sources */,
+				2EBCD23D2283BB7500B2F060 /* Frameworks */,
+				2EBCD23E2283BB7500B2F060 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E7CA6C12287FABC000D82D1 /* PBXTargetDependency */,
+			);
+			name = SENE;
+			productName = SENE;
+			productReference = 2EBCD2402283BB7500B2F060 /* SENE.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2EBCD1CD228127F900B2F060 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Gentoli;
+				TargetAttributes = {
+					2E7CA6B12287EC97000D82D1 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					2EBCD1F32282864900B2F060 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					2EBCD23F2283BB7500B2F060 = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.NetworkExtensions = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 2EBCD1D0228127F900B2F060 /* Build configuration list for PBXProject "SoftEtherVPN" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+				ja,
+				"zh-Hant",
+				ko,
+				ru,
+			);
+			mainGroup = 2EBCD1CC228127F900B2F060;
+			productRefGroup = 2EBCD1D6228127F900B2F060 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2EBCD1F32282864900B2F060 /* vpnserver */,
+				2EBCD23F2283BB7500B2F060 /* SENE */,
+				2E7CA6B12287EC97000D82D1 /* libsoftether */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2EBCD23E2283BB7500B2F060 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E10C27E2292F59800210CF9 /* Git workaround for ignore xcconfigs */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Git workaround for ignore xcconfigs";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git update-index --assume-unchanged \"${SRCROOT}/CMake.xcconfig\"\ngit update-index --assume-unchanged \"${SRCROOT}/Developer.xcconfig\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E7CA6B52287ECB8000D82D1 /*  Generate libsoftether.xcodeproj */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = " Generate libsoftether.xcodeproj";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Script to generate project for Cedar and Mayaqua\nBUILD_DIR=\"${SRCROOT}/libsoftether\"\nCMAKE_BIN=\"/opt/local/bin/cmake\"\n\n# Use COLOR_DIAGNOSTICS to test if the script is run from Xcode UI or xcodebuild command\n# COLOR_DIAGNOSTICS = \"NO\" in Xcode UI\n\nCONF_CHANGED=$([ ${CMAKE_BUILD_TYPE} != ${CONFIGURATION} ] && echo 1)\n\nif [ ! -d ${BUILD_DIR} ] || [ ${COLOR_DIAGNOSTICS} == \"YES\" ] || [ $CONF_CHANGED ]; then\n    mkdir -p ${BUILD_DIR}\n    cd ${BUILD_DIR}\n${CMAKE_BIN} -GXcode ${SRCROOT} || ( rm -r ${BUILD_DIR}; exit 1 )\n    if [ ${COLOR_DIAGNOSTICS} == \"NO\" ]; then\n        # force Xcode to stop the build for the new targets to load\n    if [ $CONF_CHANGED ]; then\n        WARN=\"Build Configuration Changed, \"\n    fi\n    echo \"error: ${WARN}libsoftether.xcodeproj Generated. Please restart the build to continue.\" \n        exit 1\n    fi\nfi\n";
+		};
+		2E7CA6EA22890370000D82D1 /*  Generate strings from strtable */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../bin/hamcore/*.stb",
+			);
+			name = " Generate strings from strtable";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Resources/*/Localizable.strings",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#! /bin/sh\n/usr/bin/python ${SRCROOT}/strtable.py\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2EBCD1F02282864900B2F060 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E0D5F902292475B003B4E96 /* vpnserver.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EBCD23C2283BB7500B2F060 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E7CA6D32288C720000D82D1 /* PacketTunnelProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E7CA6C12287FABC000D82D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E7CA6B12287EC97000D82D1 /* libsoftether */;
+			targetProxy = 2E7CA6C02287FABC000D82D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2E7CA6E22288FA7E000D82D1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E7CA6E12288FA7E000D82D1 /* en */,
+				2E7CA6E32288FAAB000D82D1 /* zh-Hans */,
+				2E7CA6E42288FAD9000D82D1 /* zh-Hant */,
+				2E7CA6E52288FAFD000D82D1 /* ja */,
+				2E7CA6E62288FB16000D82D1 /* ko */,
+				2E7CA6E72288FB20000D82D1 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2E7CA6B32287EC98000D82D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+			};
+			name = Debug;
+		};
+		2E7CA6B42287EC98000D82D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+			};
+			name = Release;
+		};
+		2EBCD1E7228127FA00B2F060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E7CA6BA2287EE9C000D82D1 /* Defaults.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/$(FRAMEWORK_ARCH_PATHS)/$(PLATFORM_NAME)";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					openssl,
+					"-liconv",
+					"-lz",
+					"-lreadline",
+				);
+				SDKROOT = "$(PLATFORM_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = "$(SRCROOT)/..";
+				VALID_ARCHS = "arm64 x86_64";
+			};
+			name = Debug;
+		};
+		2EBCD1E8228127FA00B2F060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E7CA6BA2287EE9C000D82D1 /* Defaults.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/$(FRAMEWORK_ARCH_PATHS)/$(PLATFORM_NAME)";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					openssl,
+					"-liconv",
+					"-lz",
+					"-lreadline",
+				);
+				SDKROOT = "$(PLATFORM_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = "$(SRCROOT)/..";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 x86_64";
+			};
+			name = Release;
+		};
+		2EBCD1F82282864900B2F060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(SRCROOT)/../BuildFiles/Library/xcode/macosx",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+				);
+				LIBRARY_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = macosx;
+			};
+			name = Debug;
+		};
+		2EBCD1F92282864900B2F060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(SRCROOT)/../BuildFiles/Library/xcode/macosx",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+				);
+				LIBRARY_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = macosx;
+			};
+			name = Release;
+		};
+		2EBCD2472283BB7500B2F060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "SENE/SENE-$(PLATFORM_DISPLAY_NAME).entitlements";
+				FRAMEWORK_SEARCH_PATHS = "$(FRAMEWORKS_ARCH_PATHS)/$(PLATFORM_NAME)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"$(DEFINES_libsoftether)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/..",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/net,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/readline,
+				);
+				INFOPLIST_FILE = SENE/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(ROOT_APP_ID).$(PLATFORM_DISPLAY_NAME).network-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2EBCD2482283BB7500B2F060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "SENE/SENE-$(PLATFORM_DISPLAY_NAME).entitlements";
+				FRAMEWORK_SEARCH_PATHS = "$(FRAMEWORKS_ARCH_PATHS)/$(PLATFORM_NAME)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"$(DEFINES_libsoftether)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/..",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/net,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/readline,
+				);
+				INFOPLIST_FILE = SENE/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(ROOT_APP_ID).$(PLATFORM_DISPLAY_NAME).network-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E7CA6B22287EC98000D82D1 /* Build configuration list for PBXAggregateTarget "libsoftether" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E7CA6B32287EC98000D82D1 /* Debug */,
+				2E7CA6B42287EC98000D82D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EBCD1D0228127F900B2F060 /* Build configuration list for PBXProject "SoftEtherVPN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EBCD1E7228127FA00B2F060 /* Debug */,
+				2EBCD1E8228127FA00B2F060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EBCD1FA2282864900B2F060 /* Build configuration list for PBXNativeTarget "vpnserver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EBCD1F82282864900B2F060 /* Debug */,
+				2EBCD1F92282864900B2F060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EBCD2462283BB7500B2F060 /* Build configuration list for PBXNativeTarget "SENE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EBCD2472283BB7500B2F060 /* Debug */,
+				2EBCD2482283BB7500B2F060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2EBCD1CD228127F900B2F060 /* Project object */;
+}

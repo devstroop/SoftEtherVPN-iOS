@@ -24,9 +24,10 @@
 
 #endif	// VPN_SPEED
 
+#ifndef OBJC_BOOL_DEFINED
 #define	bool	UINT
 #define	BOOL	UINT
-
+#endif // OBJC_BOOL_DEFINED
 
 // Version number
 #ifndef	CEDAR_VERSION_MAJOR
@@ -1108,6 +1109,9 @@ typedef struct CEDAR
 #endif
 
 
+#ifdef COCOA
+#include "CedarCocoa.h"
+#endif // COCOA
 
 
 ////////////////////////////

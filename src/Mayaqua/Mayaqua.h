@@ -170,13 +170,25 @@ int PASCAL WinMain(HINSTANCE hInst, HINSTANCE hPrev, char *CmdLine, int CmdShow)
 //#include <netinet/ip.h>
 #include <netdb.h>
 #include <net/if.h>
+
+#ifndef COCOA
 #include <net/if_arp.h>
 #include <readline/readline.h>
 #include <readline/history.h>
+#else // COCOA
+#include "if_arp.h"
+#include "readline.h"
+#include "history.h"
+#endif // COCOA
+
 //#include <curses.h>
 #ifdef	MAYAQUA_SUPPORTS_GETIFADDRS
 #include <ifaddrs.h>
 #endif	// MAYAQUA_SUPPORTS_GETIFADDRS
+
+#ifdef COCOA
+#include "MayaquaCocoa.h"
+#endif // COCOA
 
 #ifdef	UNIX_LINUX
 typedef void *iconv_t;

@@ -27,6 +27,7 @@ x64_Debug
 *.opt
 *.suo
 !/src/BuildFiles/**/*
+.DS_Store
 
 # Applied for 'developer_tools/stbchecker/'
 # Copied from by https://www.gitignore.io/api/visualstudio

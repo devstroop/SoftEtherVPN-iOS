@@ -171,7 +171,9 @@ typedef int PID;
 typedef unsigned long PID;
 #endif // WINDOWS_H
 
-// bool type
+#ifndef COCOA
+
+// BOOL type
 #ifndef	WINDOWS_H
 typedef	unsigned int		BOOL;
 #define	TRUE				1
@@ -184,6 +186,8 @@ typedef	unsigned int		bool;
 #define	true				1
 #define	false				0
 #endif	// WIN32COM_CPP
+
+#endif // COCOA
 
 // 32bit integer type
 #ifndef	WINDOWS_H
