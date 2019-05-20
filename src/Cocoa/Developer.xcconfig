@@ -1,0 +1,10 @@
+
+// You Apple developer account's Team ID
+DEVELOPMENT_TEAM = <Team ID>
+
+// The bundle identifier of the apps.
+// The following App IDs will be created
+//  ROOT_APP_ID.macOS.network-extension
+//  ROOT_APP_ID.iOS.network-extension
+ROOT_APP_ID = <App ID>
+
