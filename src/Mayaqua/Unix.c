@@ -224,7 +224,8 @@ void UnixIgnoreSignalForThread(int sig)
 
 	Zero(&sa, sizeof(sa));
 	sa.sa_handler = NULL;
-	sa.sa_sigaction = signal_received_for_ignore;
+	// Set sa_sigaction to NULL since we're using sa_handler
+	sa.sa_sigaction = NULL; // signal_received_for_ignore;
 	sa.sa_flags = SA_SIGINFO;
 
 	sigemptyset(&sa.sa_mask);
