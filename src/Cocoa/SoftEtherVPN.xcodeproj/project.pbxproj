@@ -342,7 +342,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#! /bin/sh\n/usr/bin/python ${SRCROOT}/strtable.py\n\n";
+			shellScript = "#! /bin/sh\n/usr/local/bin/python ${SRCROOT}/strtable.py\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
